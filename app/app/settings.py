@@ -33,6 +33,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # local apps
     'core',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'user',
 
     # natives apps
     'django.contrib.admin',
