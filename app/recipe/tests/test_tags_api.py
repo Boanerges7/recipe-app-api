@@ -18,6 +18,10 @@ class PublicTagsApiTests(TestCase):
     """Test the publicly available tags API."""
 
     def setUp(self):
+        """Define routines."""
+        self.client = APIClient()
+
+    def test_login_required(self):
         """Test that login required for retrieving tags."""
         res = self.client.get(TAGS_URL)
 

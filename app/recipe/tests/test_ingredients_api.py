@@ -79,7 +79,7 @@ class PrivateIngredientsApiTest(TestCase):
     def test_create_ingredient_successful(self):
         """Test creating a new ingredient."""
         payload = {'name': 'Cabbage'}
-        self.client.post(INGREDIENTS_URL, payload)
+        res = self.client.post(INGREDIENTS_URL, payload)
 
         exists = Ingredient.objects.filter(
             user=self.user,
@@ -87,6 +87,7 @@ class PrivateIngredientsApiTest(TestCase):
         ).exists()
 
         self.assertTrue(exists)
+        self.assertEqual(res.status_code, status.HTTP_201_CREATED)
 
     def test_create_ingredient_invalid(self):
         """Test creating invalid ingredient fails."""
