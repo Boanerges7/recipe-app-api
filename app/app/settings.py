@@ -131,6 +131,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/' # For handle image
 
-MEDIA_ROOT = '/vol/web/media' # For handle image
-STATIC_ROOT = '/vol/web/static' # For handle image
+MEDIA_ROOT = 'vol/web/media/' # For handle image
+STATIC_ROOT = 'vol/web/static/' # For handle image
 AUTH_USER_MODEL = 'core.User'
